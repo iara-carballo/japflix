@@ -26,3 +26,38 @@ main {
 .offcanvas-top{
     height: fit-content;
 }
+
+/* Modo claro por defecto */
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+.pelicula {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.pelicula img {
+    max-width: 150px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Modo oscuro automático según preferencia del sistema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: white;
+    }
+
+    .pelicula {
+        border: 1px solid #444;
+    }
+
+    .pelicula img {
+        filter: brightness(0.9); /* Ajusta imágenes para fondo oscuro */
+    }
+}
