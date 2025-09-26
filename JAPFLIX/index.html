@@ -7,9 +7,9 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
+
   <title>Japflix</title>
 </head>
-
 <body class="bg-dark text-light">
 
   <main>
@@ -19,7 +19,7 @@
 
       <!-- Buscador -->
       <div class="my-3">
-        <input type="search" class="form-control d-inline-block w-50" name="buscar" id="inputBuscar" placeholder="Ej.: The Lion King">
+        <input type="search" class="form-control d-inline-block w-50" id="inputBuscar" placeholder="Ej.: The Lion King">
         <button class="btn btn-primary m-2" id="btnBuscar">Buscar</button>
       </div>
     </div>
@@ -40,20 +40,17 @@
   </footer>
 
   <!-- Contenedor de detalle de película -->
-  <div id="detallePelicula" class="detalle-pelicula" style="display: none;">
-      <div class="detalle-contenido">
-          <h2 id="detalle-title"></h2>
-          <p id="detalle-overview"></p>
-          <ul id="detalle-genres"></ul>
-          <p><strong>Año:</strong> <span id="detalle-year"></span></p>
-          <p><strong>Duración:</strong> <span id="detalle-runtime"></span> min</p>
-          <p><strong>Presupuesto:</strong> $<span id="detalle-budget"></span></p>
-          <p><strong>Ganancias:</strong> $<span id="detalle-revenue"></span></p>
-          <button id="cerrarDetalle" class="btn btn-secondary">Cerrar</button>
-      </div>
+  <div id="detallePelicula" class="detalle-pelicula" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7); z-index:1000;">
+    <div class="detalle-contenido bg-dark text-light p-4 rounded" style="max-width:600px; margin:50px auto; position:relative;">
+      <h2 id="detalle-title"></h2>
+      <p id="detalle-overview"></p>
+      <ul id="detalle-genres"></ul>
+      <button id="cerrarDetalle" class="btn btn-secondary mt-3">Cerrar</button>
+    </div>
   </div>
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
+
 </body>
 </html>
