@@ -33,15 +33,25 @@ function mostrarPeliculas(peliculas) {
         lista.innerHTML = '<p>No se encontraron películas que coincidan con la búsqueda.</p>';
         return;
     }
-    peliculas.forEach(pelicula => {
-        let estrellas = "⭐".repeat(Math.round(pelicula.vote_average / 2));
 
-        lista.innerHTML += `
-            <li class="list-group-item">
+    peliculas.forEach((pelicula, index) => {
+        let li = document.createElement('li');
+        li.classList.add('list-group-item');
+        li.style.cursor = "pointer";
+
+    
+        let estrellas = "⭐".repeat(Math.round(pelicula.vote_average / 2));
+        li.innerHTML += `
                 <h3>${pelicula.title}</h3>
                 <p>Rating: ${estrellas}</p>
-            </li>
+          
         `;
+        // Evento click en la película
+        li.addEventListener('click', () => {
+            mostrarDetallePelicula(pelicula);
+        });
+
+        lista.appendChild(li);
     });
 }
 
@@ -65,6 +75,7 @@ inputBuscar.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
         botonBuscar.click();
     }
+});
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     console.log("El usuario tiene modo oscuro activado");
@@ -72,4 +83,33 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     console.log("El usuario tiene modo claro activado");
 }
 
+// Función para mostrar el detalle de una película
+function mostrarDetallePelicula(pelicula) {
+    document.getElementById('detalle-title').textContent = pelicula.title;
+    document.getElementById('detalle-overview').textContent = pelicula.overview;
+
+    const genresList = document.getElementById('detalle-genres');
+    genresList.innerHTML = '';
+    if (pelicula.genres) {
+        pelicula.genres.forEach(g => {
+            let li = document.createElement('li');
+            li.textContent = g.name;
+            genresList.appendChild(li);
+        });
+    }
+
+    document.getElementById('detallePelicula').style.display = 'block';
+}
+
+// Evento para cerrar el detalle
+document.getElementById('cerrarDetalle').addEventListener('click', () => {
+    document.getElementById('detallePelicula').style.display = 'none';
+
 });
+
+document.getElementById('detallePelicula').addEventListener('click', (e) => {
+    if (e.target.id === 'detallePelicula') {
+        e.currentTarget.style.display = 'none';
+    }
+});
+

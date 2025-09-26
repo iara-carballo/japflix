@@ -60,4 +60,51 @@ body {
     .pelicula img {
         filter: brightness(0.9); /* Ajusta imágenes para fondo oscuro */
     }
+
+
+    /* Contenedor superior */
+
+    .detalle-pelicula {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(165, 3, 3)2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.detalle-contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+
+    max-width: 900px;
+    width: 90%;
+    max-height: 80%;
+
+    overflow-y: hidden;
+    background-color: #222222e9;
+    padding: 20px;
+    border-radius: 0%;
+    gap: 20px;
+}
+
+.detalle-texto {
+    flex: 1;
+    overflow-y: auto;           /* Scroll SOLO en la parte de texto */
+    max-height: 70vh;           /* Se adapta a la ventana */
+}
+
+.detalle-imagen img {
+    max-width: 250px;
+    border-radius: 10px;
+}
+
 }
