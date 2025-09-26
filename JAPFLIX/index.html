@@ -7,6 +7,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <title>Japflix</title>
 </head>
 
 <body class="bg-dark text-light">
@@ -39,19 +40,20 @@
   </footer>
 
   <!-- Contenedor de detalle de película -->
-<div id="detallePelicula" class="detalle-pelicula" style="display: none;">
-    <div class="detalle-contenido">
-        <h2 id="detalle-title"></h2>
-        <p id="detalle-overview"></p>
-        <ul id="detalle-genres"></ul>
-        <button id="cerrarDetalle" class="btn btn-secondary">Cerrar</button>
-    </div>
-</div>
+  <div id="detallePelicula" class="detalle-pelicula" style="display: none;">
+      <div class="detalle-contenido">
+          <h2 id="detalle-title"></h2>
+          <p id="detalle-overview"></p>
+          <ul id="detalle-genres"></ul>
+          <p><strong>Año:</strong> <span id="detalle-year"></span></p>
+          <p><strong>Duración:</strong> <span id="detalle-runtime"></span> min</p>
+          <p><strong>Presupuesto:</strong> $<span id="detalle-budget"></span></p>
+          <p><strong>Ganancias:</strong> $<span id="detalle-revenue"></span></p>
+          <button id="cerrarDetalle" class="btn btn-secondary">Cerrar</button>
+      </div>
+  </div>
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
-
-
-
 </body>
 </html>

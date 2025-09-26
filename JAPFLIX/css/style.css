@@ -69,8 +69,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(165, 3, 3)2);
-    display: flex;
+    background-color: rgb(165, 3, 3);
+    display : flex;
     justify-content: center;
     align-items: center;
     color: white;
@@ -107,4 +107,26 @@ body {
     border-radius: 10px;
 }
 
+/* Información adicional */
+.list-group-item {
+  position: relative; /* referencia para el collapse absoluto */
+}
+
+.list-group-item .collapse {
+  position: absolute;
+  top: 50%; /* ajusta verticalmente según quieras */
+  transform: translateY(-50%); /* ajusta verticalmente al centro */
+  left: 100%; /* aparece a la derecha del li */
+  width: 300px; /* ancho del bloque de info */
+  z-index: 1000;
+  background-color: #343a40; /* color de fondo */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: none; /* se mostrará con collapse */
+}
+
+.list-group-item .collapse.show {
+  display: block;
+}
 }
